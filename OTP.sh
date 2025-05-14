@@ -1591,30 +1591,35 @@ if [ "$updt" -eq 11 ]; then
     # Add your code here for option 11
     apt update -y
     clear
-    xdg-open ""
+    xdg-open "tiktok.com/@executorhozoo"
 fi
 
 if [ "$updt" -eq 12 ]; then
     # Add your code here for option 12
     apt update -y 
     clear
-    xdg-open 
+    xdg-open  "https://youtube.com/@hozoo999?si=4y4K19gX8MDsm4G4"
 fi
 
 if [ "$updt" -eq 13 ]; then
     # Add your code here for option 13
     apt update -y 
     clear
+    xdg-open "tiktok.com/@executorhozoo"
+    clear
 fi
 
 if [ "$updt" -eq 14 ]; then
     # Add your code here for option 14
-    apt update
+    clear
+    TOOLS 👸 LORDHOZOO OP GACOR
+    DILIRISKAN TAHUN 2025-05-14 MEI RABU
 fi
 
 if [ "$updt" -eq 15 ]; then
     # Add your code here for option 15
-    apt update
+    apt update -y
+    exit
 fi
 
 
